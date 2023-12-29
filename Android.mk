@@ -19,6 +19,16 @@ LOCAL_STATIC_LIBRARIES := libfdt
 LOCAL_LDFLAGS := -static
 include $(BUILD_EXECUTABLE)
 
+include $(CLEAR_VARS)
+include $(LOCAL_PATH)/Makefile.dtbh
+LOCAL_MODULE := dtbtool
+LOCAL_SRC_FILES := $(DTBH_SRCS)
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/libfdt
+LOCAL_STATIC_LIBRARIES := libfdt
+LOCAL_LDFLAGS := -static
+include $(BUILD_EXECUTABLE)
+
+
 dtc-lexer.lex.c: dtc-lexer.l dtc-parser.tab.h
 	flex -o$@ $<
 

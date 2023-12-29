@@ -1,0 +1,9 @@
+# Makefile.dtc
+#
+# This is not a complete Makefile of itself.  Instead, it is designed to
+# be easily embeddable into other systems of Makefiles.
+#
+DTBH_SRCS = \
+	dtbtool.c
+	
+DTBH_OBJS = $(DTBH_SRCS:%.c=%.o)
